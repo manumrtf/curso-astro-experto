@@ -1,0 +1,32 @@
+---
+import PopularRouteCard from "@/components/PopularRouteCard.astro";
+---
+
+<section class="container mx-auto px-4">
+  <h2 class="font-bold text-xl text-center md:text-left xl:text-3xl">
+    Popular Routes
+  </h2>
+  <div
+    class="mt-4 inline-grid justify-items-center gap-4 md:grid-cols-3 md:justify-items-start xl:grid-cols-4"
+  >
+    <PopularRouteCard
+      imagePath="https://images.pexels.com/photos/819764/pexels-photo-819764.jpeg"
+      destination="Barcelona"
+    />
+    <PopularRouteCard
+      imagePath="https://images.pexels.com/photos/1530259/pexels-photo-1530259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      destination="Paris"
+    />
+    <PopularRouteCard
+      imagePath="https://images.pexels.com/photos/2119695/pexels-photo-2119695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      destination="Oslo"
+    />
+    <PopularRouteCard
+      imagePath="https://images.pexels.com/photos/29566781/pexels-photo-29566781/free-photo-of-vista-de-un-encantador-callejon-con-arquitectura-romana.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      destination="Roma"
+    />
+  </div>
+  <a class="bg-black text-white rounded text-center px-6 py-3 mt-6 inline-block"
+    >View More</a
+  >
+</section>
