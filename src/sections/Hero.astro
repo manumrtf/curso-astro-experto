@@ -1,3 +1,25 @@
+---
+import { getTranslatedString } from "@/i18n/helpers";
+import type { Lang } from "@/i18n/types";
+const path = Astro.url.pathname;
+const segments = path.split("/");
+const currentLang = segments[1] as Lang;
+---
+
+<div>
+  <div class="relative mx-auto w-full">
+    <img
+      class="object-cover w-full max-h-[600px] h-[80%] lg:rounded brightness-75"
+      src="https://images.pexels.com/photos/358220/pexels-photo-358220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      alt="airport"
+    />
+    <h1
+      class="text-white font-black text-2xl md:text-4xl lg:text-5xl/snug xl:text-6xl/snug absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-3 text-balance text-center max-w-[1200px] mx-auto"
+    >
+      {getTranslatedString(currentLang, "sections.hero.main-heading")}
+    </h1>
+  </div>
+</div>
 <section
   class="w-full xl:max-w-[1100px] container mx-auto border bg-white rounded shadow relative -top-11 flex flex-col gap-4 py-6 px-2 justify-center"
 >

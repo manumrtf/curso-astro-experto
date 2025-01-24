@@ -1,0 +1,24 @@
+---
+import { getLangs } from "@/i18n/helpers";
+const langs = getLangs();
+---
+
+<div class="flex items-center gap-2 px-4 py-4">
+  {langs.map((lang) => <button data-lang={lang}>{lang}</button>)}
+</div>
+
+<script>
+  import { translateCurrentRoute } from "@/i18n/helpers";
+  import type { Lang } from "@/i18n/types";
+
+  const langPickerButtons = document.querySelectorAll("[data-lang]");
+  langPickerButtons.forEach((picker) => {
+    picker.addEventListener("click", (e) => {
+      console.log("Picker click");
+      const target = e.target as HTMLButtonElement;
+      const lang = target.dataset.lang as Lang;
+      const destination = translateCurrentRoute(lang, window.location.pathname);
+      window.location.href = `/${destination}`;
+    });
+  });
+</script>

@@ -1,0 +1,9 @@
+---
+import { getTranslatedString } from "@/i18n/helpers";
+const path = Astro.url.pathname;
+const segments = path.split("/");
+const currentLang = segments[1];
+console.log({ currentLang });
+---
+
+<h1>Hola</h1>
